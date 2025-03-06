@@ -9,14 +9,14 @@ func (v ByteView) Len() int {
 }
 
 func (v ByteView) ByteSlice() []byte {
-	return v.clonebytes(v.b)
+	return cloneBytes(v.b)
 }
 
 func (v ByteView) String() string {
 	return string(v.b)
 }
 
-func (v ByteView) clonebytes(b []byte) []byte {
+func cloneBytes(b []byte) []byte {
 	c := make([]byte, len(b))
 	copy(c, b)
 	return c
